@@ -57,6 +57,22 @@
     border: 1px solid rgba(255,79,0,0.25);
   }
 
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex; gap: 0; margin-bottom: -3px; position: relative; z-index: 1;
+  }
+  .nav-tab {
+    font-family: 'IBM Plex Sans Condensed', sans-serif; font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 1.5rem;
+    color: var(--muted); text-decoration: none; border: 1px solid transparent;
+    border-bottom: none; border-radius: 6px 6px 0 0; transition: color 0.2s, background 0.2s;
+  }
+  .nav-tab:hover { color: var(--white); background: rgba(255,79,0,0.08); }
+  .nav-tab.active {
+    color: var(--orange); background: var(--cod); border-color: var(--orange);
+    border-bottom: 3px solid var(--cod); margin-bottom: -3px;
+  }
+
   .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 
   .global-filters {
@@ -222,6 +238,10 @@
       <span class="header-meta">Data from USFWS ECOSPHERE · Last updated March 2026</span>
     </div>
     <h1>ESA Section 7 Has a Data Problem</h1>
+    <nav class="nav-tabs">
+      <a class="nav-tab active" href="index.html">Dashboard</a>
+      <a class="nav-tab" href="about.html">About</a>
+    </nav>
   </div>
 </div>
 

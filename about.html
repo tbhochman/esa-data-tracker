@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — ESA Section 7 Data Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF4F00;
+    --cod: #121212;
+    --white: #FFFFFF;
+    --yellow: #FFA300;
+    --blue: #4997D0;
+    --timber: #D9D9D6;
+    --card: #1a1a1a;
+    --border: #2a2a2a;
+    --muted: #999;
+    --text: #e8e8e8;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--cod);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* Header */
+  .header {
+    background: var(--cod);
+    padding: 2rem 2rem 0;
+    border-bottom: 3px solid var(--orange);
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .header h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .header .subtitle {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: -3px;
+    position: relative;
+    z-index: 1;
+  }
+  .nav-tab {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-tab:hover {
+    color: var(--white);
+    background: rgba(255,79,0,0.08);
+  }
+  .nav-tab.active {
+    color: var(--orange);
+    background: var(--cod);
+    border-color: var(--orange);
+    border-bottom: 3px solid var(--cod);
+    margin-bottom: -3px;
+  }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+
+  /* Section Titles */
+  .section-title {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--orange);
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* About content */
+  .about-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .about-text p { margin-bottom: 1rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-text a { color: var(--orange); text-decoration: none; }
+  .about-text a:hover { text-decoration: underline; }
+
+  .creator-name {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+  }
+  .creator-role {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .creator-links {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+  .creator-links a { color: var(--orange); text-decoration: none; }
+  .creator-links a:hover { text-decoration: underline; }
+
+  .org-name {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+  }
+  .org-tagline {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .source-note {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 2px solid var(--orange);
+    line-height: 1.8;
+  }
+  .source-note a { color: var(--orange); text-decoration: none; }
+  .source-note a:hover { text-decoration: underline; }
+
+  /* Chevron page furniture */
+  .page-chevron {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    opacity: 0.08;
+    width: 28px;
+    z-index: 0;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- Chevron page furniture (bottom-left) -->
+<svg class="page-chevron" viewBox="0 0 900 1081" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M459.238 0.82L899.028 540.82L459.238 1080.82V0.82Z" fill="#FFFFFF"/>
+<path d="M0 0.82L439.78 540.82L0 1080.82V0.82Z" fill="#FFFFFF"/>
+</svg>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <img src="fai-lockup-white.svg" alt="Foundation for American Innovation" height="40">
+    </div>
+    <h1>ESA Section 7 Has a Data Problem</h1>
+    <div class="subtitle">About This Project</div>
+    <nav class="nav-tabs">
+      <a class="nav-tab" href="index.html">Dashboard</a>
+      <a class="nav-tab active" href="about.html">About</a>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+
+  <h2 class="section-title">About This Dashboard</h2>
+  <div class="card">
+    <div class="about-text">
+      <p>This dashboard examines the public record of formal biological opinions issued by the U.S. Fish and Wildlife Service (USFWS) under Section 7 of the Endangered Species Act. It demonstrates that the publicly available data in the ECOSPHERE system is a small, inconsistent subset of actual ESA consultations — making year-over-year trends unreliable and public accountability difficult.</p>
+      <p>USFWS logs all consultations in its internal Tracking and Integrated Logging System (TAILS), which records roughly 935 formal biological opinions per year. The public ECOSPHERE system captures only 300&ndash;500 of those annually, depending on voluntary data entry by field staff. The analysis quantifies this gap and highlights the data quality problems in detail.</p>
+      <p>Data is compiled from the USFWS <a href="https://reports.ecosphere.fws.gov/FWSPublicReports/Reports/Index?reportname=BiologicalOpinionReport" target="_blank">ECOSPHERE Biological Opinion Reports</a>. The TAILS benchmark is drawn from Malcom &amp; Li (2015), <a href="https://doi.org/10.1073/pnas.1516938112" target="_blank">PNAS</a>.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Created By</h2>
+  <div class="card">
+    <div class="creator-name">Thomas Hochman</div>
+    <div class="creator-role">Director of Energy &amp; Infrastructure Policy, Foundation for American Innovation</div>
+    <div class="about-text">
+      <p>Thomas Hochman leads the Energy &amp; Infrastructure Policy team at the Foundation for American Innovation, focusing on permitting and energy policy. His work has contributed to permitting reform legislation, executive orders, agency guidance, and energy tax credit reforms.</p>
+      <p>He has testified to Congress as an expert witness on NEPA matters. His writing appears in the Washington Post, Wall Street Journal, American Affairs, The New Atlantis, City Journal, and Oxford Energy Forum, with citations in the New York Times and Politico.</p>
+      <p>Hochman holds a B.S. in Statistics (Phi Beta Kappa, cum laude, with high honors in major) from the University of Vermont.</p>
+    </div>
+    <div class="creator-links">
+      <a href="https://www.thefai.org/profile/thomas-hochman" target="_blank">FAI Profile</a>
+      <a href="https://x.com/ThomasHochman" target="_blank">@ThomasHochman</a>
+    </div>
+  </div>
+
+  <h2 class="section-title">About the Foundation for American Innovation</h2>
+  <div class="card">
+    <div class="org-name">Foundation for American Innovation</div>
+    <div class="org-tagline">No Innovation without Representation</div>
+    <div class="about-text">
+      <p>The Foundation for American Innovation (FAI) is an organization of technologists and policy entrepreneurs working to advance a more perfect union between technology and the American republic. FAI conducts research and advocacy across energy and infrastructure, technology, governance, artificial intelligence, national security, science, and education.</p>
+      <p><a href="https://www.thefai.org" target="_blank">Visit thefai.org &rarr;</a></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
